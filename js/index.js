@@ -76,6 +76,26 @@ window.addEventListener('resize', () => {
 });
 
 
+// Super scale text size on mouse over. Scale back on mouse leave.
+const destination = document.querySelectorAll('.destination');
+
+destination.forEach((element) => {
+    element.addEventListener('mouseover', (event) => {
+        event.target.parentElement.parentElement.style.transform = 'scale(2)';
+
+        event.target.parentElement.parentElement.style.transition = 'transform 1s';
+    });
+
+    element.addEventListener('mouseout', (event) => {
+        event.target.parentElement.parentElement.style.transform = 'scale(1)';
+    });
+})
+
+
+
+
+
+
 
 
 
