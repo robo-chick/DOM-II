@@ -18,11 +18,26 @@ play.addEventListener('mouseover', () => {
 });
 
 // rotate images in content-section using gsap
-const adventureImg = document.querySelector('.img-content');
+const adventureImg = document.querySelector('.lets-go');
 
 adventureImg.addEventListener('click', (event) => {
    event.stopPropagation();
-    gsap.to('.img-content', {
+    gsap.to('.lets-go', {
+        duration: 2,
+        filter: 'none',
+        x: -20,
+        y: -10,
+        rotate: -360,
+        yoyo: true,
+        repeat: 1
+    });
+});
+
+const newImg = document.querySelector('.have-fun');
+
+newImg.addEventListener('click', () => {
+    newImg.src='img/adventure2.jpg';
+    gsap.to('.have-fun', {
         duration: 2,
         filter: 'none',
         x: -20,
@@ -89,7 +104,15 @@ destination.forEach((element) => {
     element.addEventListener('mouseout', (event) => {
         event.target.parentElement.parentElement.style.transform = 'scale(1)';
     });
-})
+});
+
+
+const stopLink = document.querySelector('.nav-link');
+
+stopLink.addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('stopped the link');
+});
 
 
 
